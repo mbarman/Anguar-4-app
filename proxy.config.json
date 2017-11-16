@@ -1,0 +1,7 @@
+{
+    "/bedrock-app/*": {
+        "target": "http://192.168.2.164:9090",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

@@ -1,0 +1,11 @@
+.disabled-div {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.pagination-control {
+    display: inline-block;
+    height: 26px;
+    vertical-align: middle;
+    cursor: pointer;
+}

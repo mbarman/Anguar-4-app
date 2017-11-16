@@ -1,0 +1,82 @@
+<div style="padding-top: 10px;">
+    <md-grid-list cols="12" rowHeight="50px">
+
+        <md-grid-tile [colspan]="5" [rowspan]="1">
+            <div class="align-me-left">
+                <md-input-container style="width: 300px;">
+                    <input [(ngModel)]="entityName" mdInput placeholder="Search Entity">
+                </md-input-container>
+
+                <button (click)="filterData()" md-button>SEARCH</button>
+
+                <button md-button>CLEAR</button>
+            </div>
+
+
+        </md-grid-tile>
+
+        <!--   <md-grid-tile [colspan]="1" [rowspan]="1">
+
+        </md-grid-tile> -->
+
+        <md-grid-tile [colspan]="3" [rowspan]="1">
+            <div>
+                <md-radio-group>
+                    <md-radio-button value="1">All</md-radio-button>
+                    <md-radio-button value="2">Owned</md-radio-button>
+                    <md-radio-button value="3">Shared With Me</md-radio-button>
+                </md-radio-group>
+            </div>
+        </md-grid-tile>
+        <md-grid-tile [colspan]="1" [rowspan]="1">
+
+        </md-grid-tile>
+
+        <md-grid-tile [colspan]="3" [rowspan]="1">
+            <div class="align-me-right">
+                <button md-button>ADD</button>
+
+                <button md-button>REFRESH</button>
+
+                <button md-icon-button [mdMenuTriggerFor]="menu">
+                    <i class="material-icons">more_vert</i>
+                  </button>
+                <md-menu #menu="mdMenu">
+                    <button md-menu-item>
+                      <!-- <i class="material-icons">dialpad</i> -->
+                      <button md-button>DELETE</button>
+                    </button>
+                    <button md-menu-item>
+                        <button md-button>TRANSFER</button>
+                    </button>
+                    <button md-menu-item>
+                        <button md-button>SHARE</button>
+                    </button>
+                </md-menu>
+            </div>
+        </md-grid-tile>
+
+        <md-grid-tile [colspan]="12" [rowspan]="8">
+            <div class="align-me-left" style="top: 10px;">
+                <ag-grid-angular (sortChanged)="onSortChanged($event)" #agGrid style="width: 1350px; height: 390px; padding : 5px;" class="ag-fresh mat-elevation-z8"  [gridOptions]="gridOptions" [columnDefs]="columnDefs">
+                </ag-grid-angular>
+            </div>
+        </md-grid-tile>
+
+        <md-grid-tile [colspan]="12" [rowspan]="0.7">
+            <div class="align-me-right-10px" style="padding: 10px;margin-top: 10px;">
+                <div>
+                    <!-- <span>Page Size:</span><span>{{pageSize}}</span>
+                    <span>Total Pages:</span><span>{{totalPages}}</span>
+                    <span>Current Page:</span><span>{{currentPage}}</span> -->
+                    <span>{{from}} - </span>
+                    <span>{{to}}</span>
+                    <span> of </span>
+                    <span>{{totalItems}}</span>
+                    <div class="pagination-control" [ngClass]="{'disabled-div': !bPrevVisible}" (click)='loadPreviousPage()'><i class="material-icons">skip_previous</i></div>
+                    <div class="pagination-control" [ngClass]="{'disabled-div': !bNextVisible}" (click)='loadNextPage()'><i class="material-icons">skip_next</i></div>
+                </div>
+            </div>
+        </md-grid-tile>
+    </md-grid-list>
+</div>

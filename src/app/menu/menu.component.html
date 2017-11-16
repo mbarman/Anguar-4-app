@@ -1,0 +1,67 @@
+<header style="width:100%">
+    <nav id='cssmenu'>
+        <div id="head-mobile"></div>
+        <div class="button"></div>
+        <ul>
+            <li *ngFor="let menu of menuItems;let lastItem=last;">
+                <a>{{menu.title}} <span *ngIf="!lastItem" class='pad-left'>|</span></a>
+                <ul *ngIf="menu.subMenu">
+                    <li *ngFor="let subMenuItem of menu.subMenu">
+                        <a [routerLink]="subMenuItem.href">{{subMenuItem.title}}</a>
+                        <ul *ngIf="subMenuItem.subMenu">
+                            <li *ngFor="let subItem of subMenuItem.subMenu">
+                                <a [routerLink]="subItem.href">{{subItem.title}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <!-- <li class='active'><a href='#'>Home</a>
+                <ul>
+                    <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a></li>
+                    <li><a routerLink="/home/list-dashboard" routerLinkActive="active"> List Dashboard </a></li>
+                    <li><a routerLink="/home/analyze-inventory" routerLinkActive="active"> Analyze Inventory </a></li>
+                </ul>
+            </li>
+
+            <li><a href='#'>Ingestion</a>
+                <ul>
+                    <li><a href=''>View Ingest History</a></li>
+                    <li><a href=''>Connection List</a></li>
+                    <li><a href=''>Define Connection</a></li>
+                    <li><a href=''>Define File Ingest</a></li>
+                    <li><a href=''>Define Streaming Ingest</a></li>
+                    <li><a href=''>Automated Inventory</a></li>
+                </ul>
+            </li>
+
+            <li><a href='#'>Prepare</a>
+                <ul>
+                    <li><a href=''>List Workflows</a></li>
+                    <li><a href=''>Monitor Workflows</a>
+                        <ul>
+                            <li><a href=''>Running</a></li>
+                            <li><a href=''>Queued</a></li>
+                            <li><a href=''>Completed</a></li>
+                        </ul>
+                    </li>
+                    <li><a href=''>List Transformations</a>
+
+                    </li>
+                </ul>
+            </li>
+            <li><a href=''>Metadata</a>
+                <ul>
+                    <li><a href=''>List Entities</a></li>
+                    <li><a href=''>Define Entity</a></li>
+                </ul>
+            </li>
+            <li><a href=''>Quality</a>
+                <ul>
+                    <li><a href=''>List Rules</a></li>
+                    <li><a href=''>Define Rule</a></li>
+                </ul>
+            </li> -->
+        </ul>
+    </nav>
+</header>

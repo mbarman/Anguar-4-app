@@ -1,0 +1,33 @@
+<!-- <div class="row first-row">
+    <div class="col-sm-2 column-height">
+        <a ng-href="#/" href="#/">
+            <img src="assets/images/bedrock-logo.svg" width="177" height="22" align="left"></a>
+    </div>
+    <div class="col-sm-8 column-height">
+    </div>
+    <div class="col-sm-2 column-height">
+    </div>
+</div>
+
+<div class="row second-row">
+    <app-menu></app-menu>
+</div> -->
+
+<div>
+    <md-grid-list cols="12" rowHeight="50px">
+
+        <md-grid-tile [colspan]="1.65" [rowspan]="1" style="margin-left: 15px !important;">
+            <a ng-href="#/">
+                <img src="assets/images/bedrock-logo.svg">
+            </a>
+        </md-grid-tile>
+
+        <md-grid-tile [colspan]="8" [rowspan]="1"></md-grid-tile>
+        <md-grid-tile [colspan]="2" [rowspan]="1"></md-grid-tile>
+
+        <md-grid-tile [colspan]="12" [rowspan]="1" style="overflow:visible;">
+            <app-menu style="width:100%;overflow:visible;"></app-menu>
+        </md-grid-tile>
+
+    </md-grid-list>
+</div>
